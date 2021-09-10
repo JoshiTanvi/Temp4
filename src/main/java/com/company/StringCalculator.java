@@ -29,7 +29,9 @@ public class StringCalculator{
                 }
 
             }else {
-                total = total + Integer.parseInt(n);
+                if(Integer.parseInt(n) <= 1000){
+                    total = total + Integer.parseInt(n);
+                }
             }
         }
         if(!negatives.equals("")){

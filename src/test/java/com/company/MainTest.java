@@ -57,7 +57,10 @@ public class MainTest extends junit.framework.TestCase {
 
     }
 
-
-
+    @Test
+    public void add_ignoreBiggerThan1000_returnsSum() {
+        int result = sc.add("2,1002,5");
+        assertEquals(result, 7);
+    }
 }
 
