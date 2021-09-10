@@ -42,6 +42,12 @@ public class MainTest extends junit.framework.TestCase {
         assertEquals(result, 13);
     }
 
+    @Test
+    public void add_delimiters_returnsSum() {
+        int result = sc.add("//;\n1;5;7");
+        assertEquals(result, 13);
+    }
+
 
 }
 

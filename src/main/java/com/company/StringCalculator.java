@@ -5,7 +5,13 @@ public class StringCalculator{
         if(numbers.length() == 0){
             return 0;
         }else{
-            String[] numList = numbers.split(",|\n");
+            String delimiter = ",|\n";
+            if(numbers.matches("//(.*)\n(.*)")){
+                delimiter = Character.toString(numbers.charAt(2));
+                numbers = numbers.substring(4);
+                System.out.println(delimiter);
+            }
+            String[] numList = numbers.split(delimiter);
             return sum(numList);
         }
 
