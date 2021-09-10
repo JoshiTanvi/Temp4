@@ -1,26 +1,27 @@
 package com.company;
 
-import org.hamcrest.core.Is;
-import org.junit.Assert;
 import org.junit.Test;
-import org.junit.jupiter.api.TestFactory;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import static org.junit.jupiter.api.Assertions.*;
 @RunWith(JUnit4.class)
 public class MainTest extends junit.framework.TestCase {
+
+    StringCalculator sc = new StringCalculator();
     @Test
-    public void Add_EmptyString_Return0(){
+    public void add_emptyString_returns0(){
 
-        StringCalculator sc = new StringCalculator();
+        //StringCalculator sc = new StringCalculator();
         int result = sc.add("");
-        Assert.assertEquals(result, 0);
+        assertEquals(result, 0);
+    }
+
+    @Test
+    public void add_singleNumber_returnsThatNumber() {
+       // StringCalculator sc = new StringCalculator();
+        int result = sc.add("3");
+        assertEquals(result, 3);
+
     }
 }
 
-class StringCalculator{
-    public int add(String numbers){
-        return 0;
-    }
-}
