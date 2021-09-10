@@ -11,14 +11,13 @@ public class MainTest extends junit.framework.TestCase {
     @Test
     public void add_emptyString_returns0(){
 
-        //StringCalculator sc = new StringCalculator();
         int result = sc.add("");
         assertEquals(result, 0);
     }
 
     @Test
     public void add_singleNumber_returnsThatNumber() {
-       // StringCalculator sc = new StringCalculator();
+
         int result = sc.add("3");
         assertEquals(result, 3);
 
@@ -47,6 +46,17 @@ public class MainTest extends junit.framework.TestCase {
         int result = sc.add("//;\n1;5;7");
         assertEquals(result, 13);
     }
+
+    @Test
+    public void add_negatives_returnsSum() {
+        try{
+            int result = sc.add("-5,7,-2");
+        }catch (IllegalArgumentException e){
+            assertEquals(e.getMessage(), "Negatives are not allowed: -5,-2");
+        }
+
+    }
+
 
 
 }

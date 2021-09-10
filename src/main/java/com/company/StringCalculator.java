@@ -19,8 +19,21 @@ public class StringCalculator{
 
     private int sum(String[] numList) {
         int total = 0;
+        String negatives = "";
         for( String n: numList){
-            total = total + Integer.parseInt(n);
+            if(Integer.parseInt(n) < 0){
+                if(negatives.equals("")){
+                    negatives += n;
+                }else{
+                    negatives += ","+n;
+                }
+
+            }else {
+                total = total + Integer.parseInt(n);
+            }
+        }
+        if(!negatives.equals("")){
+            throw new IllegalArgumentException("Negatives are not allowed: "+negatives);
         }
         return total;
     }
