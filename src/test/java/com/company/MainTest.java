@@ -23,5 +23,11 @@ public class MainTest extends junit.framework.TestCase {
         assertEquals(result, 3);
 
     }
+
+    @Test
+    public void add_twoNumbers_returnsSum() {
+        int result = sc.add("1,5");
+        assertEquals(result, 6);
+    }
 }
 

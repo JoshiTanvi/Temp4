@@ -5,8 +5,17 @@ public class StringCalculator{
         if(numbers.length() == 0){
             return 0;
         }else{
-            return Integer.parseInt(numbers);
+            String[] numList = numbers.split(",");
+            return sum(numList);
         }
 
+    }
+
+    private int sum(String[] numList) {
+        int total = 0;
+        for( String n: numList){
+            total = total + Integer.parseInt(n);
+        }
+        return total;
     }
 }
